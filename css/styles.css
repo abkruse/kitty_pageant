@@ -1,0 +1,27 @@
+* {
+  box-sizing:border-box; }
+
+body {
+  background-color: rgb(121, 189, 143); }
+
+header {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  font-size: 400%; }
+
+footer {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  color: pink;
+  font-size: 200%; }
+
+.winner {
+  border: 10px solid pink; }
+
+a {
+  text-decoration: none;
+  color: pink;  }
+
+  img {
+    border-radius: 10px;
+  }
