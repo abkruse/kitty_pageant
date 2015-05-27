@@ -2,26 +2,32 @@
   box-sizing:border-box; }
 
 body {
-  background-color: rgb(121, 189, 143); }
+  background-color: rgb(255, 97, 56); }
+
+header, footer {
+  font-family: 'Pacifico', cursive;
+  color: rgb(255, 255, 157);
+  text-align: center;}
 
 header {
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  font-size: 400%; }
+  font-size: 400%;}
 
 footer {
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  color: pink;
-  font-size: 200%; }
+  font-size: 150%; }
 
-.winner {
+img:hover {
   border: 10px solid pink; }
+
+img:active {
+  border: 10px solid red; }
 
 a {
   text-decoration: none;
-  color: pink;  }
+  color: rgb(190, 235, 159) }
 
-  img {
-    border-radius: 10px;
-  }
+img {
+  border-radius: 10px; }
+
+.loser {
+  display: none;
+}
