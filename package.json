@@ -1,0 +1,22 @@
+{
+  "name": "kitty_pageant",
+  "version": "1.0.0",
+  "description": "kitty pageant app",
+  "main": "kitty_pageant.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abkruse/kitty_pageant.git"
+  },
+  "author": "abkruse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abkruse/kitty_pageant/issues"
+  },
+  "homepage": "https://github.com/abkruse/kitty_pageant#readme",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+}
