@@ -1,7 +1,4 @@
 
-var images = [];
-var votes = 0;
-
 var showCat = function(){
   do {
     var idx = Math.floor(Math.random() * images.length);
