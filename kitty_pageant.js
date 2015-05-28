@@ -3,8 +3,8 @@ var images = [];
 var votes = 0;
 
 var showCat = function(){
+  var idx = Math.floor(Math.random() * images.length);
   do {
-    var idx = Math.floor(Math.random() * images.length);
     var idx2 = Math.floor(Math.random()* images.length);
     $('.pix-one').attr('src', images[idx].link);
     $('.pix-two').attr('src', images[idx2].link);}
@@ -19,7 +19,6 @@ $.ajax ({
   })
   .done(function(res){
     images = res.data;
-    console.log(res.data[0].link);
     showCat();
   })
 
@@ -27,7 +26,7 @@ $('img').on('click', function(e){
   e.preventDefault();
   $('img').removeClass('winner');
   $(this).addClass('winner');
-  votes += 1;
+  images.votes += 1;
   var idx3 = Math.floor(Math.random() * images.length);
   $('img').not('.winner').attr('src', images[idx3].link);
 });
