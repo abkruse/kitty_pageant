@@ -1,28 +1,35 @@
-var Cat = function(img, votes) {
-  this.img = img;
-  this.votes = 0;
-}
 
-var kittyPics = [];
-
-for (var i=0; i<14; i++){
-  kittyPics.push('kitty_pics/'+[i]+'.jpg');
-}
+var images = [];
+var votes = 0;
 
 var showCat = function(){
-  var idx = Math.floor(Math.random() * kittyPics.length);
-  var idx2 = Math.floor(Math.random()* kittyPics.length);
-  $('.pix-one').attr('src', kittyPics[idx]);
-  $('.pix-two').attr('src', kittyPics[idx2]);
+  do {
+    var idx = Math.floor(Math.random() * images.length);
+    var idx2 = Math.floor(Math.random()* images.length);
+    $('.pix-one').attr('src', images[idx].link);
+    $('.pix-two').attr('src', images[idx2].link);}
+  while(idx === idx2);
 }
 
-showCat();
+$.ajax ({
+  url: 'https://api.imgur.com/3/album/Mdqtz/images.json',
+  headers: {
+    'Authorization' : 'Client-ID 59537354f1c2cb7'
+    }
+  })
+  .done(function(res){
+    images = res.data;
+    console.log(res.data[0].link);
+    showCat();
+  })
 
 $('img').on('click', function(e){
   e.preventDefault();
   $('img').removeClass('winner');
   $(this).addClass('winner');
-  this.votes =+ 1;
-  var idx3 = Math.floor(Math.random() * kittyPics.length);
-  $('img').not('.winner').attr('src', kittyPics[idx3]);
+  votes += 1;
+  var idx3 = Math.floor(Math.random() * images.length);
+  $('img').not('.winner').attr('src', images[idx3].link);
 });
+
+console.log(votes);
